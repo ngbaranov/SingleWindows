@@ -42,12 +42,12 @@ class Departments(enum.Enum):
     laboratory = "Центральная лаборатория"
     Cleaning = "Участок бытового обслуживания"
     General = "Общий отдел"
-
+    outside = "Другие организации"
 
 class TypeViolation(enum.Enum):
     Access_mode = "Пропускной режим"
     Information_security = "Информационная безопасность"
     Work_schedule = "Трудовой распорядок"
-
+    Other = "Другое"
 
 
