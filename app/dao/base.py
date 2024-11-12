@@ -16,3 +16,15 @@ class BaseDAO:
 
         # Возвращаем список всех пользователей
         return records
+
+    @classmethod
+    async def add(cls, session: AsyncSession, **values):
+        # Добавить одну запись
+        new_instance = cls.model(**values)
+        session.add(new_instance)
+        try:
+            await session.commit()
+        except SQLAlchemyError as e:
+            await session.rollback()
+            raise e
+        return new_instance

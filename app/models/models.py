@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -11,8 +11,8 @@ class User(Base):
     address:Mapped[str]
     phone_number:Mapped[str|None]
     department:Mapped[Departments] = mapped_column(default=Departments.General)
-    hired:Mapped[datetime]
-    dismissal:Mapped[datetime|None]
+    hired:Mapped[date]
+    dismissal:Mapped[date|None]
 
     violations:Mapped[list['Violations']] = relationship("Violations",back_populates="user", cascade="all, delete-orphan")
 
