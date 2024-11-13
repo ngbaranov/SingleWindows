@@ -9,9 +9,10 @@
     <p>Имя: {{ user.username }}</p>
     <p>Адрес: {{ user.address }}</p>
     <p>Телефон: {{ user.phone_number }}</p>
-    <p>Департамент: {{ user.department }}</p>
+    <p>Департамент: {{ department }}</p>
     <p>Дата принятия на работу: {{ user.hired }}</p>
-    <p>Дата увольнения: {{user.dismissal}}</p>
+    {% if user.dismissal %}
+    <p>Дата увольнения с работы: {{ user.dismissal }}</p>
 
 </body>
 </html>

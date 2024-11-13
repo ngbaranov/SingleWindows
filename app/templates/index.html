@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Главная страница</h1>
+    {% for user in users %}
+        <p>Имя: {{ user.username }}</p>
+        <p>Адрес: {{ user.address }}</p>
+        <p>Телефон: {{ user.phone_number }}</p>
+        <p>Департамент: {{ user.department.value }}</p>
+        <p>Дата принятия на работу: {{ user.hired }}</p>
+        {% if user.dismissal %}
+            <p>Дата увольнения с работы: {{ user.dismissal }}</p>
+        {% endif %}
+        <hr>
+    {% endfor %}
+
+</body>
+</html>

@@ -73,9 +73,26 @@
         <label for="dismissal">Дата увольнения:</label>
         <input type="date" id="dismissal" name="dismissal">
       </div>
+      <hr>
+       <div class="form-group">
+        <label for="type_violation">Форма нарушения:</label>
+        <select id="type_violation" name="type_violation">
+          <option value="Access_mode" selected>Пропускной режим</option>
+          <option value="Information_security">Информационная безопасность</option>
+          <option value="Work_schedule">Трудовой распорядок</option>
+          <option value="Other">Другое</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date_violation">Дата нарушения:</label>
+        <input type="date" id="date_violation" name="date_violation">
+      </div>
+      <div class="form-group">
+        <label for="description">Суть нарушения:</label>
+        <textarea rows="12" cols="43" id="description" name="description"></textarea>
+      </div>
       <button type="submit">Отправить</button>
     </form>
   </div>
-
 </body>
 </html>

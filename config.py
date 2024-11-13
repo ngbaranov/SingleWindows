@@ -20,6 +20,3 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-
-print("DB URL =>", settings.get_db_url())
-print("DB HOST =>", settings.DB_HOST)
