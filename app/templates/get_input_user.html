@@ -13,6 +13,13 @@
     <p>Дата принятия на работу: {{ user.hired }}</p>
     {% if user.dismissal %}
     <p>Дата увольнения с работы: {{ user.dismissal }}</p>
+    {% endif %}
+    <hr>
+    <h2>Данные нарушения</h2>
+    <p>Форма нарушения: {{ type_violation }}</p>
+    <p>Дата нарушения: {{ violation.date_violation }}</p>
+    <p>Суть нарушения: {{ violation.description }}</p>
+
 
 </body>
 </html>

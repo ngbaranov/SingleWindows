@@ -1,5 +1,5 @@
 from app.dao.base import BaseDAO
-from app.models.models import User, Violations
+from app.models.models import User, Violations, DepartmentUser
 
 
 class UsersDAO(BaseDAO):
@@ -8,3 +8,7 @@ class UsersDAO(BaseDAO):
 
 class ViolationsDAO(BaseDAO):
     model = Violations
+
+
+class DepartmentUsersDAO(BaseDAO):
+    model = DepartmentUser

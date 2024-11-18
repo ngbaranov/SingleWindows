@@ -3,7 +3,7 @@ from datetime import datetime, date
 from fastapi import APIRouter, Request, Depends, Form
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.dao.dao import UsersDAO, ViolationsDAO
+from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO
 from app.database.db_depends import get_db
 from app.models.sql_enums import Departments, TypeViolation
 
@@ -40,6 +40,7 @@ async def post_input_user(request: Request,
                        department=department, hired=hired_date, dismissal=dismissal_date)
     violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
                         description=description, user_id=user.id)
+
 
     departments_dict = {department.name: department.value for department in Departments}
     department = departments_dict.get(department)
