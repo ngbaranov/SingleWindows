@@ -13,6 +13,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 @router.get("/")
 async def get_index(request: Request, db: Annotated[AsyncSession, Depends(get_db)]):
-    users = await UsersDAO.get_all_users(db)
+    users = await UsersDAO.get_users_with_details(db)
 
-    return templates.TemplateResponse("index.html", {"request": request, "users": users})
+
+    return templates.TemplateResponse("index.html", {"request": request, 'users': users})

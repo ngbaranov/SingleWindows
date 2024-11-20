@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <title>Users</title>
 </head>
 <body>
-    <h1>Главная страница</h1>
-    {% for user in users %}
-        <p>Имя: {{ user.username }}</p>
-        <p>Адрес: {{ user.address }}</p>
-        <p>Телефон: {{ user.phone_number }}</p>
-        <p>Департамент: {{ user.department.value }}</p>
-        <p>Дата принятия на работу: {{ user.hired }}</p>
-        {% if user.dismissal %}
-            <p>Дата увольнения с работы: {{ user.dismissal }}</p>
-        {% endif %}
-        <hr>
-    {% endfor %}
-
+    <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Department</th>
+                <th>Violations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.department.name.value }}</td>
+                <td>
+                    <ul>
+                        {% for violation in user.violations %}
+                        <li>{{ violation.type_violation.value }} - {{ violation.date_violation }} - {{ violation.description }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

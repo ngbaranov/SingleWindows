@@ -8,7 +8,7 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/single_windows_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="single_windows_db@164.132.3.207" uuid="a82910a9-9522-4a3d-8495-bdb033973069">
+    <data-source source="LOCAL" name="single_windows_db@164.132.3.207" uuid="d035877f-9b48-4d2f-9cca-5a3954a8e1e6">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

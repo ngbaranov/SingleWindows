@@ -10,7 +10,6 @@ class User(Base):
     username:Mapped[str]
     address:Mapped[str]
     phone_number:Mapped[str|None]
-    # department:Mapped[Departments] = mapped_column(default=Departments.General)
     hired:Mapped[date]
     dismissal:Mapped[date|None]
     department_id:Mapped[int] = mapped_column(ForeignKey('departmentusers.id'))

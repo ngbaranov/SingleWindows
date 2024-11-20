@@ -36,10 +36,15 @@ async def post_input_user(request: Request,
     dismissal_date = datetime.strptime(dismissal, "%Y-%m-%d").date() if dismissal else None
     date_violation = datetime.strptime(date_violation, "%Y-%m-%d").date() if date_violation else None
 
+    department_user = await DepartmentUsersDAO.add(db, name=department)
+
     user = await UsersDAO.add(db, username=username, address=address, phone_number=phone_number,
-                       department=department, hired=hired_date, dismissal=dismissal_date)
+                              department_id=department_user.id,
+                       hired=hired_date, dismissal=dismissal_date)
     violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
                         description=description, user_id=user.id)
+
+
 
 
     departments_dict = {department.name: department.value for department in Departments}

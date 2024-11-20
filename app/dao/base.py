@@ -1,4 +1,5 @@
 from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -29,3 +30,13 @@ class BaseDAO:
             await session.rollback()
             raise e
         return new_instance
+
+
+    @classmethod
+    async def get_users_with_details(cls,session: AsyncSession):
+        query = (select(cls.model).options(joinedload(cls.model.department),  # Загружаем департамент пользователя
+                joinedload(cls.model.violations)  # Загружаем нарушения пользователя
+            )
+        )
+        result = await session.execute(query)
+        return result.scalars().unique().all()
