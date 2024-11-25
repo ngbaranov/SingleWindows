@@ -1,218 +1,34 @@
-<html><head><base href="." />
-<meta charset="UTF-8" />
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  min-height: 100vh;
-  margin: 0;
-  padding: 2rem;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.search-container {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-}
-
-.search-input {
-  width: calc(100% - 1.5rem);  /* Adjusted width accounting for padding */
-  padding: 0.75rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  box-sizing: border-box;  /* Added box-sizing */
-}
-
-.departments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-}
-
-.department-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.department-card:hover {
-  transform: translateY(-5px);
-}
-
-.department-title {
-  color: #333;
-  margin: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #4a90e2;
-}
-
-.employee-list {
-  display: none;
-  margin-top: 1rem;
-  padding-left: 1rem;
-}
-
-.employee-list.active {
-  display: block;
-}
-
-.employee-item {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.new-employee-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: #4a90e2;
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-}
-
-.new-employee-btn:hover {
-  background: #357abd;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
 </head>
 <body>
-  <div class="container">
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Поиск сотрудников..." id="searchInput">
-    </div>
-
-    <div class="departments-grid" id="departmentsGrid"></div>
-  </div>
-
-  <button class="new-employee-btn" onclick="window.location.href='form.html'">+</button>
-
-<script>
-const departments = {
-  'Общий отдел': [],
-  'Руководство': [],
-  'Административный отдел': [],
-  'Бухгалтерия': [],
-  'Бюро метрологии': [],
-  'Бюро пропусков': [],
-  'Диспетчерская служба': [],
-  'Здравпункт': [],
-  'Коммерческий отдел': [],
-  'Московское отделение': [],
-  'Отдел главного механика': [],
-  'Отдел главного энергетика': [],
-  'Отдел информационных технологий': [],
-  'Отдел кадров': [],
-  'Отдел логистики': [],
-  'Охрана труда': [],
-  'ОТК': [],
-  'Отдел эксплуатации зданий и сооружений': [],
-  '1 отдел': [],
-  'Производственно-технический отдел': [],
-  'Ремонтно-строительный участок': [],
-  'Складское хозяйство': [],
-  'СБиР': [],
-  'Служба качества': [],
-  'Финансовый отдел': [],
-  'Юридический отдел': [],
-  'Профсоюзный комитет': [],
-  'Столовая': [],
-  'Транспортная служба': [],
-  'Участок электроснабжения': [],
-  'ЦАП': [],
-  'Участок №1': [],
-  'Участок по аффинажу драгметаллов': [],
-  'Передел аффинажа золота': [],
-  'Передел аффинажа серебра': [],
-  'Передел аффинажа платины': [],
-  'Передел аффинажа родия и иридия': [],
-  'Передел переработки катализаторов': [],
-  'Центральная лаборатория': [],
-  'Участок бытового обслуживания': [],
-  'Другие организации': []
-};
-
-function createDepartmentCards() {
-  const grid = document.getElementById('departmentsGrid');
-
-  for (const [dept, employees] of Object.entries(departments)) {
-    const card = document.createElement('div');
-    card.className = 'department-card';
-
-    const title = document.createElement('h3');
-    title.className = 'department-title';
-    title.textContent = dept;
-
-    const list = document.createElement('div');
-    list.className = 'employee-list';
-
-    if (employees.length === 0) {
-      const emptyText = document.createElement('div');
-      emptyText.className = 'employee-item';
-      emptyText.textContent = 'Нет сотрудников';
-      list.appendChild(emptyText);
-    } else {
-      employees.forEach(emp => {
-        const empItem = document.createElement('div');
-        empItem.className = 'employee-item';
-        empItem.textContent = emp;
-        list.appendChild(empItem);
-      });
-    }
-
-    card.appendChild(title);
-    card.appendChild(list);
-
-    card.addEventListener('click', function() {
-      list.classList.toggle('active');
-    });
-
-    grid.appendChild(card);
-  }
-}
-
-function setupSearch() {
-  const searchInput = document.getElementById('searchInput');
-  const cards = document.getElementsByClassName('department-card');
-
-  searchInput.addEventListener('input', function(e) {
-    const searchTerm = e.target.value.toLowerCase();
-
-    Array.from(cards).forEach(card => {
-      const title = card.querySelector('.department-title').textContent.toLowerCase();
-      const employees = Array.from(card.querySelectorAll('.employee-item'))
-        .map(emp => emp.textContent.toLowerCase());
-
-      const matchesSearch = title.includes(searchTerm) ||
-        employees.some(emp => emp.includes(searchTerm));
-
-      card.style.display = matchesSearch ? 'block' : 'none';
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  createDepartmentCards();
-  setupSearch();
-});
-</script>
-</body></html>
+    <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Department</th>
+                <th>Violations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.department.name.value }}</td>
+                <td>
+                    <ul>
+                        {% for violation in user.violations %}
+                        <li>{{ violation.type_violation.value }} - {{ violation.date_violation }} - {{ violation.description }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -40,3 +40,10 @@ class BaseDAO:
         )
         result = await session.execute(query)
         return result.scalars().unique().all()
+
+    @classmethod
+    async def get_user_by_id(cls, session: AsyncSession, user_id: int):
+        query = select(cls.model).where(cls.model.id == user_id).options(joinedload(cls.model.department),
+                joinedload(cls.model.violations))
+        result = await session.execute(query)
+        return result.scalars().unique().one()

@@ -2,33 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable List</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='index_styles.css') }}">
 </head>
 <body>
-    <h1>Users List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Department</th>
-                <th>Violations</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.username }}</td>
-                <td>{{ user.department.name.value }}</td>
-                <td>
-                    <ul>
-                        {% for violation in user.violations %}
-                        <li>{{ violation.type_violation.value }} - {{ violation.date_violation }} - {{ violation.description }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        {% for department, employees in users.items() %}
+        <div class="department-card">
+            <h3 class="department-title">{{ department }}</h3>
+            <div class="employee-list">
+                {% for employee in employees %}
+                <div class="employee-item">
+                    <p>{{employee.id}}</p>
+                    <a href="/user/{{ employee.id }}">{{ employee.name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="{{ url_for('static', path='index_js.js') }}"></script>
 </body>
 </html>
