@@ -1,8 +1,16 @@
 services:
-  web:
+  app:
     build:
       context: .
-      dockerfile: ./app/Dockerfile
-    command: uvicorn app.main:app --host 0.0.0.0
+      dockerfile: Dockerfile
     ports:
-      - '8000:8000'
+      - "8000:8000"  # Предполагаем, что ваше приложение слушает на порту 8000
+    environment:
+      # Переменные окружения для подключения к удаленной БД
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+    env_file:
+      - .env
