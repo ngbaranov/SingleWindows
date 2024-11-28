@@ -2,20 +2,23 @@
 FROM python:3.12.7
 
 # Устанавливаем рабочую директорию
-WORKDIR /app
+WORKDIR /code
 
 # Копируем файлы приложения в контейнер
-COPY ./app /app
+COPY ./app /code/app
+COPY ./alembic.ini /code/alembic.ini
+COPY ./config.py /code/config.py
+COPY ./.env /code/.env
+COPY ./requirements.txt /code/requirements.txt
 
 # Копируем файл requirements.txt и устанавливаем зависимости
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /code/requirements.txt
 
 # Копируем файл config.py и alembic.ini
-COPY config.py /app/config.py
-COPY alembic.ini /app/alembic.ini
+
 
 # Копируем файл .env
-COPY .env /app/.env
+
 
 # Открываем порт для приложения
 EXPOSE 8000
