@@ -1,43 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ user.username }}</title>
-</head>
-<body>
-    <h1>{{ user.username }}</h1>
-    <p>Адрес: {{ user.address }}</p>
-    <p>Телефон: {{ user.phone_number }}</p>
-    <p>Департамент: {{ user.department.name.value }}</p>
-    <p>Дата принятия на работу: {{ user.hired }}</p>
-    {% if user.dismissal %}
-    <p>Дата увольнения с работы: {{ user.dismissal }}</p>
-    {% endif %}
-    <hr>
-    <h2>Данные нарушения</h2>
-    {% for violation in user.violations %}
-    <p>Форма нарушения: {{ violation.type_violation.value }}</p>
-    <p>Дата нарушения: {{ violation.date_violation }}</p>
-    <p>Суть нарушения: {{ violation.description }}</p>
-    {% endfor %}
-    <hr>
-    <h2>Добавить нарушение</h2>
-    <form method="post" action="/input_violation/{{ user.id }}">
-        <label for="type_violation">Форма нарушения:</label>
-        <select id="type_violation" name="type_violation">
-            <option value="Access_mode" selected>Пропускной режим</option>
-            <option value="Information_security">Информационная безопасность</option>
-            <option value="Work_schedule">Трудовой распорядок</option>
-            <option value="Other">Другое</option>
-        </select>
-        <br>
-        <label for="date_violation">Дата нарушения:</label>
-        <input type="date" id="date_violation" name="date_violation" required>
-        <br>
-        <label for="description">Суть нарушения:</label>
-        <textarea rows="4" cols="50" id="description" name="description" required></textarea>
-        <br>
-        <input type="submit" value="Добавить нарушение">
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+    {% block title %}Информация о сотруднике{% endblock %}
+    {% block content %}
+    <!--<h1>{{ user.username }}</h1>-->
+    <!--<p>Адрес: {{ user.address }}</p>-->
+    <!--<p>Телефон: {{ user.phone_number }}</p>-->
+    <!--<p>Департамент: {{ user.department.name.value }}</p>-->
+    <!--<p>Дата принятия на работу: {{ user.hired }}</p>-->
+    <!--{% if user.dismissal %}-->
+    <!--<p>Дата увольнения с работы: {{ user.dismissal }}</p>-->
+    <!--{% endif %}-->
+    <!--<hr>-->
+    <!--<h2>Данные нарушения</h2>-->
+    <!--{% for violation in user.violations %}-->
+    <!--<p>Форма нарушения: {{ violation.type_violation.value }}</p>-->
+    <!--<p>Дата нарушения: {{ violation.date_violation }}</p>-->
+    <!--<p>Суть нарушения: {{ violation.description }}</p>-->
+    <!--{% endfor %}-->
+    <!--<hr>-->
+    <!--<h2>Добавить нарушение</h2>-->
+    <!--<form method="post" action="/input_violation/{{ user.id }}">-->
+    <!--    <label for="type_violation">Форма нарушения:</label>-->
+    <!--    <select id="type_violation" name="type_violation">-->
+    <!--        <option value="Access_mode" selected>Пропускной режим</option>-->
+    <!--        <option value="Information_security">Информационная безопасность</option>-->
+    <!--        <option value="Work_schedule">Трудовой распорядок</option>-->
+    <!--        <option value="Other">Другое</option>-->
+    <!--    </select>-->
+    <!--    <br>-->
+    <!--    <label for="date_violation">Дата нарушения:</label>-->
+    <!--    <input type="date" id="date_violation" name="date_violation" required>-->
+    <!--    <br>-->
+    <!--    <label for="description">Суть нарушения:</label>-->
+    <!--    <textarea rows="4" cols="50" id="description" name="description" required></textarea>-->
+    <!--    <br>-->
+    <!--    <input type="submit" value="Добавить нарушение">-->
+    <!--</form>-->
+
+        <div class="container my-5 border p-3 rounded mb-3">
+            <h1 class="mb-4">Информация о сотруднике</h1>
+            <!-- Информация о сотруднике -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <h5>Фамилия, Имя, Отчество:</h5>
+                    <h6>{{ user.username }}</h6>
+                </div>
+            </div>
+            <div class="mb-3">
+                <h5>Адрес:</h5>
+                <p>{{ user.address }}</p>
+            </div>
+            <div class="mb-3">
+                <h5>Телефон:</h5>
+                <p>{{ user.phone_number }}</p>
+            </div>
+            <div class="mb-3">
+                <h5>Департамент:</h5>
+                <p>{{ user.department.name.value }}</p>
+            </div>
+            <div class="mb-3">
+                <h5>Дата принятия на работу:</h5>
+                <p>{{ user.hired }}</p>
+            </div>
+            {% if user.dismissal %}
+            <div class="mb-3">
+                <h5>Дата увольнения с работы:</h5>
+                <p>{{ user.dismissal }}</p>
+            </div>
+            {% endif %}
+            <!-- Нарушения -->
+            <h2 class="mt-4">Нарушения</h2>
+            {% if user.violations %}
+                {% for violation in user.violations %}
+                <div id="violations">
+                    <div class="violation-item border p-3 rounded mb-3">
+                        <h5>Форма нарушения:</h5>
+                        <p>{{ violation.type_violation.value }}</p>
+                        <h5>Дата нарушения:</h5>
+                        <p>{{violation.date_violation}}</p>
+                        <h5>Суть нарушения:</h5>
+                        <p>{{violation.description}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            <p>Нарушения не найдены.</p>
+            {% endif %}
+        </div>
+    <a href="/input_violation/{{ user.id }}" class="btn btn-outline-primary d-inline-flex align-items-center">
+    <i class="bi bi-plus-circle me-2"></i> Добавить нарушение
+    </a>
+    {% endblock %}

@@ -13,8 +13,13 @@ from app.models.sql_enums import Departments, TypeViolation
 router = APIRouter(prefix="/input_violation", tags=["input_violation"])
 templates = Jinja2Templates(directory="app/templates")
 
+@router.get("/{id}")
+async def get_input_violation(request: Request, id: int, db: Annotated[AsyncSession, Depends(get_db)]):
+    user = await UsersDAO.get_user_by_id(db, id)
+    return templates.TemplateResponse("input_violation.html", {"request": request, "user": user})
 
-@router.post("/{id}")
+
+@router.post("/get_input_violation/{id}")
 async def input_violation(request: Request, id: int, db: Annotated[AsyncSession, Depends(get_db)],
                           type_violation: str = Form(),
                           date_violation: str = Form(),

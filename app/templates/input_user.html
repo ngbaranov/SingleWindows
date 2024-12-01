@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<head lang="ru">
-<meta charset="UTF-8" />
-<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
-<title>Форма ввода данных работника</title>
-</head>
-<body>
+{% extends 'base.html' %}
+    {% block title %}Информация о сотруднике{% endblock %}
+    {% block content %}
+<h1 class="mb-3">Информация о сотруднике</h1>
   <div class="form-container">
     <form method="POST" action="get_input_user" >
-      <div class="form-group">
-        <label for="username">Имя:</label>
-        <input type="text" id="username" name="username" required>
+      <div class="mb-3">
+        <label for="username" class="form-label">Имя:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
       </div>
-      <div class="form-group">
-        <label for="address">Адрес:</label>
-        <input type="text" id="address" name="address" required>
+      <div class="mb-3">
+        <label for="address" class="form-label">Адрес:</label>
+        <input type="text" class="form-control" id="address" name="address" required>
       </div>
-      <div class="form-group">
-        <label for="phone_number">Телефон:</label>
-        <input type="tel" id="phone_number" name="phone_number" required>
+      <div class="mb-3">
+        <label for="phone_number" class="form-label">Телефон:</label>
+        <input type="tel" class="form-control" id="phone_number" name="phone_number" required>
       </div>
-      <div class="form-group">
-        <label for="department">Департамент:</label>
-        <select id="department" name="department" required>
+      <div class="mb-3">
+        <label for="department" class="form-label">Департамент:</label>
+        <select id="department" class="form-select" name="department" required>
           <option value="General" selected>Общий отдел</option>
           <option value="Management">Руководство</option>
           <option value="Administrative">Административный отдел</option>
@@ -65,18 +62,20 @@
           <option value="outside">Другие организации</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="hired">Дата принятия на работу:</label>
-        <input type="date" id="hired" name="hired" required>
+      <div class="mb-3">
+        <label for="hired" class="form-label">Дата принятия на работу:</label>
+        <input type="date" class="form-control" id="hired" name="hired" required>
       </div>
-      <div class="form-group">
-        <label for="dismissal">Дата увольнения:</label>
-        <input type="date" id="dismissal" name="dismissal">
+      <div class="mb-3">
+        <label for="dismissal" class="form-label">Дата увольнения:</label>
+        <input type="date" class="form-control" id="dismissal" name="dismissal">
       </div>
-      <hr>
+      <hr class="my-4">
+      <!-- Блок с информацией о нарушении -->
+      <h2 class="mb-3">Информация о нарушении</h2>
        <div class="form-group">
-        <label for="type_violation">Форма нарушения:</label>
-        <select id="type_violation" name="type_violation">
+        <label for="type_violation" class="form-label">Форма нарушения:</label>
+        <select id="type_violation" class="form-select" name="type_violation">
           <option value="Access_mode" selected>Пропускной режим</option>
           <option value="Information_security">Информационная безопасность</option>
           <option value="Work_schedule">Трудовой распорядок</option>
@@ -84,15 +83,15 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="date_violation">Дата нарушения:</label>
-        <input type="date" id="date_violation" name="date_violation">
+        <label for="date_violation" class="form-label">Дата нарушения:</label>
+        <input type="date" class="form-control" id="date_violation" name="date_violation">
       </div>
       <div class="form-group">
-        <label for="description">Суть нарушения:</label>
-        <textarea rows="12" cols="43" id="description" name="description"></textarea>
+        <label for="description" class="form-label">Суть нарушения:</label>
+        <textarea class="form-control" rows="12" cols="43" id="description" name="description"></textarea>
       </div>
-      <button type="submit">Отправить</button>
+      <button type="submit" class="btn btn-primary mt-3">Отправить</button>
     </form>
   </div>
-</body>
-</html>
+
+{% endblock %}
