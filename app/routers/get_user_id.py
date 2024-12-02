@@ -1,13 +1,13 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Request, Depends, Form
+from fastapi import APIRouter, Request, Depends
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO
+from app.dao.dao import UsersDAO
 from app.database.db_depends import get_db
-from app.models.sql_enums import Departments, TypeViolation
+
 
 
 router = APIRouter(prefix="/user", tags=["user"])
