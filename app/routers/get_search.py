@@ -17,12 +17,10 @@ templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/")
-async def get_search(request: Request, db: Annotated[AsyncSession, Depends(get_db)], query: str = Query()):
-    results = select(User).where(User.username.ilike(f"%{query}%"))  # (await UsersDAO.get_users_by_query(query))
-    users = await db.execute(results)
-    users = users.scalars().all()
+async def get_search(request: Request, db: Annotated[AsyncSession, Depends(get_db)], query: str = Query(...)):
 
-    # query = select(cls.model).where(cls.model.id == user_id).options(joinedload(cls.model.department),
-    #                                                                  joinedload(cls.model.violations))
-    # result = await session.execute(query)
+    stmt = select(User).where(User.username.like(f"%{query}%"))
+    result = await db.execute(stmt)
+    users = result.scalars().all()
     return templates.TemplateResponse("get_search.html", {"request": request, "users": users})
+
