@@ -19,7 +19,7 @@ templates = Jinja2Templates(directory="app/templates")
 @router.get("/")
 async def get_search(request: Request, db: Annotated[AsyncSession, Depends(get_db)], query: str = Query(...)):
 
-    stmt = select(User).where(User.username.like(f"%{query}%"))
+    stmt = select(User).where(User.username.ilike(f"%{query}%"))
     result = await db.execute(stmt)
     users = result.scalars().all()
     return templates.TemplateResponse("get_search.html", {"request": request, "users": users})
