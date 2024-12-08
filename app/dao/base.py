@@ -33,11 +33,18 @@ class BaseDAO:
 
 
     @classmethod
-    async def get_users_with_details(cls,session: AsyncSession):
-        query = (select(cls.model).options(joinedload(cls.model.department),  # Загружаем департамент пользователя
-                joinedload(cls.model.violations)  # Загружаем нарушения пользователя
-            )
-        )
+    async def get_users_with_details(cls,session: AsyncSession, *args):
+        # query = (select(cls.model).options(joinedload(cls.model.department),  # Загружаем департамент пользователя
+        #         joinedload(cls.model.violations)  # Загружаем нарушения пользователя
+        #     )
+        # )
+        # Создаем базовый запрос
+        query = select(cls.model)
+
+        # Добавляем динамические связи через joinedload
+        for relation in args:
+            query = query.options(joinedload(relation))
+
         result = await session.execute(query)
         return result.scalars().unique().all()
 
@@ -47,3 +54,6 @@ class BaseDAO:
                 joinedload(cls.model.violations))
         result = await session.execute(query)
         return result.scalars().unique().one()
+
+
+ 

@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.dao.dao import UsersDAO
 from app.database.db_depends import get_db
+from app.models.models import User
 from app.models.sql_enums import Departments
 
 router = APIRouter()
@@ -16,7 +17,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 @router.get("/")
 async def get_index(request: Request, db: Annotated[AsyncSession, Depends(get_db)]):
-    users = await UsersDAO.get_users_with_details(db)
+    users = await UsersDAO.get_users_with_details(db, User.department, User.violations)
 
     departments = defaultdict(list)
     for user in users:

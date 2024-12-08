@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Расширенный поиск{% endblock %}
+{% block content %}
+<h2>Результаты поиска: {{ violation }}</h2>
+{% for username, count in violation_users.most_common() %}
+{% set user = (users | selectattr('username', 'equalto', username) | list | first) %}
+{% if user %}
+<div class="my-3">
+    <a href="/user/{{ user.id }}">{{ username }}</a> - {{ count }} нарушений
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
