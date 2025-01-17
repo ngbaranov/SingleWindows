@@ -12,7 +12,7 @@ from app.database.db_depends import get_db
 from app.models.models import User, Violations
 from app.models.sql_enums import Departments, TypeViolation
 
-router = APIRouter(prefix="/advanced_search", tags=["get_search"])
+router = APIRouter(prefix="/  advanced_search", tags=["get_search"])
 templates = Jinja2Templates(directory="app/templates")
 
 

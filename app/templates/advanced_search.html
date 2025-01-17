@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Расширенный поиск{% endblock %}
+{% block content %}
+<h1>Расширенный поиск</h1>
+<div class="container my-5">
+    <div class="row">
+        {% for violation_key, violation_value in violations.items() %}
+        <div class="col-md-6">
+            <a href="/advanced_search/{{ violation_key }}">{{ violation_value }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
