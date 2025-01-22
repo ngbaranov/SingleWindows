@@ -3,20 +3,21 @@
 {% block content %}
 
     <h2>Данные работника</h2>
-    <p>Имя: {{ user.username }}</p>
-    <p>Адрес: {{ user.address }}</p>
-    <p>Телефон: {{ user.phone_number }}</p>
+    <p>Имя: {{ user.surname }}</p>
+    <p>Фамилия: {{ user.name }}</p>
+    <p>Отчество: {{ user.last_name }}</p>
     <p>Департамент: {{ department }}</p>
+    {% if user.hired %}
     <p>Дата принятия на работу: {{ user.hired }}</p>
-    {% if user.dismissal %}
+    {% elif user.dismissal %}
     <p>Дата увольнения с работы: {{ user.dismissal }}</p>
     {% endif %}
     <hr>
     {% if violation.date_violation %}
     <h2>Данные нарушения</h2>
-    <p>Форма нарушения: {{ type_violation }}</p>
-    <p>Дата нарушения: {{ violation.date_violation }}</p>
-    <p>Суть нарушения: {{ violation.description }}</p>
+    <p>Форма нарушения:<br> {{ type_violation }}</p>
+    <p>Дата нарушения:<br> {{ violation.date_violation }}</p>
+    <p>Суть нарушения:<br> {{ violation.description }}</p>
     {% else %}
     <h4>Нарушения отсутствуют</h4>
     {% endif %}

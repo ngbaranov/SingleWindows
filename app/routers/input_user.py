@@ -22,9 +22,9 @@ async def get_input_user(request: Request, db: Annotated[AsyncSession, Depends(g
 @router.post("/get_input_user")
 async def post_input_user(request: Request,
                           db: Annotated[AsyncSession, Depends(get_db)],
-                          username: str = Form(),
-                          address: str = Form(),
-                          phone_number: str = Form(),
+                          surname: str = Form(),
+                          name: str = Form(),
+                          last_name: str = Form(),
                           department: str = Form(),
                           hired: str = Form(),
                           dismissal: str | None = Form(),
@@ -38,7 +38,7 @@ async def post_input_user(request: Request,
 
     department_user = await DepartmentUsersDAO.add(db, name=department)
 
-    user = await UsersDAO.add(db, username=username, address=address, phone_number=phone_number,
+    user = await UsersDAO.add(db, surname=surname, name=name, last_name=last_name,
                               department_id=department_user.id,
                        hired=hired_date, dismissal=dismissal_date)
     violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,

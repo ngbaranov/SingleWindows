@@ -42,26 +42,19 @@
     <div class="row mb-3">
         <div class="col-md-4">
             <h5>Фамилия, Имя, Отчество:</h5>
-            <h6>{{ user.username }}</h6>
+            <h6>{{ user.surname }} {{ user.name }} {{ user.last_name }}</h6>
         </div>
-    </div>
-    <div class="mb-3">
-        <h5>Адрес:</h5>
-        <p>{{ user.address }}</p>
-    </div>
-    <div class="mb-3">
-        <h5>Телефон:</h5>
-        <p>{{ user.phone_number }}</p>
     </div>
     <div class="mb-3">
         <h5>Департамент:</h5>
         <p>{{ user.department.name.value }}</p>
     </div>
+    {% if user.hired %}
     <div class="mb-3">
         <h5>Дата принятия на работу:</h5>
         <p>{{ user.hired }}</p>
     </div>
-    {% if user.dismissal %}
+    {% elif user.dismissal %}
     <div class="mb-3">
         <h5>Дата увольнения с работы:</h5>
         <p>{{ user.dismissal }}</p>

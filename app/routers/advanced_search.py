@@ -12,7 +12,7 @@ from app.database.db_depends import get_db
 from app.models.models import User, Violations
 from app.models.sql_enums import Departments, TypeViolation
 
-router = APIRouter(prefix="/  advanced_search", tags=["get_search"])
+router = APIRouter(prefix="/advanced_search", tags=["get_search"])
 templates = Jinja2Templates(directory="app/templates")
 
 
@@ -37,7 +37,7 @@ async def get_search(request: Request, type_violation: str, db: Annotated[AsyncS
     users = result.scalars().all()
     violation_users = []
     for user in users:
-        violation_users.append(user.username)
+        violation_users.extend([user.surname, user.name, user.last_name])
 
     violation_users = Counter(violation_users)
     print(violation_users)
@@ -54,3 +54,5 @@ async def get_search(request: Request, type_violation: str, db: Annotated[AsyncS
 
 
     return templates.TemplateResponse("get_advanced_search.html", {"request": request, "users": users, "violation": violation, "violation_users": violation_users})
+
+

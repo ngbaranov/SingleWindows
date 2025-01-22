@@ -10,5 +10,12 @@
         </div>
         {% endfor %}
     </div>
+    <p class="h3 mt-5">Поиск по ключевым словам</p>
+    <div class="row mt-3">
+        <form method="get" class="d-flex ms-auto" action="/get_search">
+            <input class="form-control me-2" type="search" name="query_discriptions" placeholder="Введите  ключевые слова" aria-label="Поиск">
+            <button class="btn btn-outline-success" type="submit">Поиск</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

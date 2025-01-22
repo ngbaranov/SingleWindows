@@ -14,7 +14,7 @@
                     {% for employee in employees %}
                     <li>
                         <a class="dropdown-item" href="/user/{{ employee.id }}">
-                            {{ employee.name }}
+                            {{ employee.surname }} {{ employee.name }} {{ employee.last_name }}
                         </a>
                     </li>
                     {% endfor %}

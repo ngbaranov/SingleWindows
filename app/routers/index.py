@@ -23,6 +23,6 @@ async def get_index(request: Request, db: Annotated[AsyncSession, Depends(get_db
     for user in users:
         department_name = str(user.department.name.value) if isinstance(user.department.name,
                                                                         Departments) else user.department.name
-        departments[department_name].append({"name": user.username, "id": user.id})
+        departments[department_name].append({"surname": user.surname, "name": user.name, "last_name": user.last_name, "id": user.id})
 
     return templates.TemplateResponse("index.html", {"request": request, 'users': departments})
