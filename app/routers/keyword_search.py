@@ -11,23 +11,22 @@ from app.database.db_depends import get_db
 from app.models.models import User, Violations
 from app.models.sql_enums import Departments, TypeViolation
 
-
-router = APIRouter(prefix="/get_search", tags=["get_search"])
+router = APIRouter(prefix="/keyword_search", tags=["keyword_search"])
 templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/")
-async def get_search(request: Request, db: Annotated[AsyncSession, Depends(get_db)], query: str = Query(...)):
-
-    stmt = select(User).where(or_(User.surname.ilike(f"%{query}%"),
-                                  User.name.ilike(f"%{query}%"),
-                                  User.last_name.ilike(f"%{query}%")))
-
+async def get_search(request: Request, db: Annotated[AsyncSession, Depends(get_db)], keyword: str = Query(...)):
+    """
+    Поиск по ключевым словам
+    :param request:
+    :param db:
+    :param keyword:
+    :return:
+    """
+    stmt = select(User).join(Violations).where(Violations.description.ilike(f"%{keyword}%")).options(joinedload(User.violations))
 
     result = await db.execute(stmt)
-    users = result.scalars().all()
+    users = result.unique().scalars().all()
     print(users)
     return templates.TemplateResponse("get_search.html", {"request": request, "users": users})
-
-
-
