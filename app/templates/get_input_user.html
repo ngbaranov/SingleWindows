@@ -21,5 +21,11 @@
     {% else %}
     <h4>Нарушения отсутствуют</h4>
     {% endif %}
+    {% if files %}
+`   <h2>Загруженные файлы</h2>
+    <a href="/static/files/{{ files.filename }}" download>{{ files.filename }}</a>
+    {% else %}
+    <h4>Файлы отсутствуют</h4>
+    {% endif %}
 
 {% endblock %}

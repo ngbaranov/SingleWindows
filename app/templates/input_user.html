@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="mb-3">Информация о сотруднике</h1>
 <div class="form-container">
-    <form method="POST" action="get_input_user">
+    <form method="POST" action="get_input_user" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="surname" class="form-label">Фамилия:</label>
             <input type="text" class="form-control" id="surname" name="surname" required>
@@ -89,6 +89,10 @@
         <div class="form-group">
             <label for="description" class="form-label">Суть нарушения:</label>
             <textarea class="form-control" rows="12" cols="43" id="description" name="description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="uploaded_files" class="form-label">Загрузить файлы:</label>
+            <input type="file" class="form-control" id="uploaded_files" name="uploaded_files" multiple>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Отправить</button>
     </form>

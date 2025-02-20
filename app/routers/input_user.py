@@ -1,20 +1,24 @@
+import os
 from datetime import datetime, date
 
-from fastapi import APIRouter, Request, Depends, Form
+import aiofiles
+from fastapi import APIRouter, Request, Depends, Form, UploadFile, File
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO
+from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO, UploadedFilesDAO
 from app.database.db_depends import get_db
 from app.models.sql_enums import Departments, TypeViolation
 
 from typing import Annotated
+
+from auth.service.current_user import get_current_admin_user
 
 router = APIRouter(prefix="/input_user", tags=["input_user"])
 templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/")
-async def get_input_user(request: Request, db: Annotated[AsyncSession, Depends(get_db)]):
+async def get_input_user(request: Request, db: Annotated[AsyncSession, Depends(get_db)], admin_user: dict = Depends(get_current_admin_user)):
     users = await UsersDAO.get_all_users(db)
     return templates.TemplateResponse("input_user.html", {"request": request, "users": users})
 
@@ -31,6 +35,7 @@ async def post_input_user(request: Request,
                           type_violation: str | None = Form(),
                           date_violation: str | None = Form(),
                           description: str | None = Form(),
+                          uploaded_files: UploadFile = File(None),
                           ):
     hired_date = datetime.strptime(hired, "%Y-%m-%d").date() if hired else None
     dismissal_date = datetime.strptime(dismissal, "%Y-%m-%d").date() if dismissal else None
@@ -44,6 +49,26 @@ async def post_input_user(request: Request,
     violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
                         description=description, user_id=user.id)
 
+    files = None
+    if not uploaded_files or not uploaded_files.filename:
+
+        files = None
+    else:
+        filename = os.path.basename(uploaded_files.filename)
+        upload_dir = "app/static/files"
+        os.makedirs(upload_dir, exist_ok=True)
+        file_path = os.path.join(upload_dir, filename)
+
+        async with aiofiles.open(file_path, "wb") as f:
+            content = await uploaded_files.read()
+            await f.write(content)
+
+ 
+        files = await UploadedFilesDAO.add(db, user_id=user.id, filename=filename, filepath=file_path)
+
+
+
+
 
 
 
@@ -54,5 +79,6 @@ async def post_input_user(request: Request,
 
     return templates.TemplateResponse("get_input_user.html", {"request": request, "user": user,
                                                               "department": department, "violation": violation,
-                                                              "type_violation": type_violation})
+                                                              "type_violation": type_violation,
+                                                               "files": files})
 

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Finish create names and keywords search">
+      <change afterPath="$PROJECT_DIR$/app/routers/add_document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/delete_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migration/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/get_user_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/get_user_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/input_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/input_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/get_input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/get_input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/input_violation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/input_violation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ngbaranov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ngbaranov/SingleWindows.git&quot;,
+    &quot;accountId&quot;: &quot;5bcbe021-9c8b-448f-81de-2e730008d0cd&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ri03r1MOMiJjpQDmDBtKwrSXfy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.SingleWindows.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nikolai/PycharmProjects/CargoTaxi/app/dao/base.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SingleWindows" type="Python.FastAPI">
+      <option name="file" value="$PROJECT_DIR$/app/main.py" />
+      <module name="SingleWindows" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.12 (SingleWindows)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="" />
+      <created>1737026391754</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737026391754</updated>
+      <workItem from="1737026392796" duration="3767000" />
+      <workItem from="1737031731039" duration="5000" />
+      <workItem from="1737102989905" duration="673000" />
+      <workItem from="1737103667303" duration="1157000" />
+      <workItem from="1737104830997" duration="132000" />
+      <workItem from="1737104967791" duration="32000" />
+      <workItem from="1737105006507" duration="590000" />
+      <workItem from="1737105660247" duration="58000" />
+      <workItem from="1737109287611" duration="6957000" />
+      <workItem from="1737117738105" duration="133000" />
+      <workItem from="1737350404746" duration="4000" />
+      <workItem from="1737370507116" duration="11544000" />
+      <workItem from="1737438009927" duration="1675000" />
+      <workItem from="1737439698723" duration="16077000" />
+      <workItem from="1737463908657" duration="3950000" />
+      <workItem from="1737522414755" duration="744000" />
+      <workItem from="1737532591998" duration="5355000" />
+      <workItem from="1737542020293" duration="7680000" />
+      <workItem from="1737609343018" duration="3000" />
+      <workItem from="1737634575383" duration="866000" />
+      <workItem from="1737705139918" duration="4048000" />
+      <workItem from="1737959298869" duration="8098000" />
+      <workItem from="1738045134291" duration="1416000" />
+      <workItem from="1738053508024" duration="1940000" />
+      <workItem from="1738064787870" duration="6475000" />
+      <workItem from="1738071629030" duration="611000" />
+      <workItem from="1738149356056" duration="2885000" />
+      <workItem from="1738154028169" duration="4747000" />
+      <workItem from="1738214643480" duration="1226000" />
+      <workItem from="1738226253960" duration="2000" />
+      <workItem from="1738303785672" duration="17000" />
+      <workItem from="1738570327948" duration="2238000" />
+      <workItem from="1738580591686" duration="65000" />
+      <workItem from="1738580676510" duration="6909000" />
+      <workItem from="1738650922489" duration="361000" />
+      <workItem from="1738733045215" duration="101000" />
+      <workItem from="1738756387911" duration="3734000" />
+      <workItem from="1738831374228" duration="308000" />
+      <workItem from="1738840081664" duration="76000" />
+      <workItem from="1738840171975" duration="6282000" />
+      <workItem from="1738847053334" duration="1680000" />
+      <workItem from="1738908155793" duration="298000" />
+      <workItem from="1738908860577" duration="8820000" />
+      <workItem from="1739190304886" duration="1220000" />
+      <workItem from="1739260867482" duration="601000" />
+      <workItem from="1739272580152" duration="45000" />
+      <workItem from="1739274939778" duration="622000" />
+      <workItem from="1739781888680" duration="1862000" />
+      <workItem from="1739794849452" duration="3510000" />
+      <workItem from="1739856944452" duration="1970000" />
+      <workItem from="1739864416588" duration="546000" />
+      <workItem from="1739877175035" duration="2935000" />
+      <workItem from="1739963682971" duration="5164000" />
+      <workItem from="1740030811616" duration="22000" />
+      <workItem from="1740031043796" duration="14000" />
+      <workItem from="1740051552100" duration="4382000" />
+    </task>
+    <task id="LOCAL-00001" summary="Preparing for database adjustments">
+      <option name="closed" value="true" />
+      <created>1737115509818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737115509818</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create surname, name, last_name">
+      <option name="closed" value="true" />
+      <created>1737535819789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737535819789</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finish create names and keywords search">
+      <option name="closed" value="true" />
+      <created>1737705825350</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737705825350</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Preparing for database adjustments" />
+    <MESSAGE value="Create surname, name, last_name" />
+    <MESSAGE value="Finish create names and keywords search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish create names and keywords search" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/migration/env.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/models/models.py</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/input_user.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/auth/auth_routher.py</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/auth/service/token_jvt.py</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SingleWindows$SingleWindows.coverage" NAME="SingleWindows Coverage Results" MODIFIED="1738580922347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

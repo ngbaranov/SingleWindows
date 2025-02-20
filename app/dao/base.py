@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import select, and_
 from sqlalchemy.orm import joinedload
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -51,9 +51,22 @@ class BaseDAO:
     @classmethod
     async def get_user_by_id(cls, session: AsyncSession, user_id: int):
         query = select(cls.model).where(cls.model.id == user_id).options(joinedload(cls.model.department),
-                joinedload(cls.model.violations))
+                joinedload(cls.model.violations), joinedload(cls.model.files))
         result = await session.execute(query)
         return result.scalars().unique().one()
+
+
+    @classmethod
+    async def get_by_field(cls, session: AsyncSession, **filters):
+        """Получить запись по одному или нескольким полям."""
+        if not filters:
+            raise ValueError("Необходимо указать хотя бы одно поле для поиска.")
+
+        conditions = [getattr(cls.model, key) == value for key, value in filters.items()]
+        query = select(cls.model).where(and_(*conditions))
+
+        result = await session.execute(query)
+        return result.scalars().first()
 
 
  

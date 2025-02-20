@@ -20,6 +20,7 @@ class User(Base):
 
     department: Mapped['DepartmentUser'] = relationship("DepartmentUser", back_populates="users")
 
+    files: Mapped[list['UploadedFile']] = relationship("UploadedFile", back_populates="user_file", cascade="all, delete-orphan")
 
 class Violations(Base):
     type_violation: Mapped[TypeViolation | None] = mapped_column(default=TypeViolation.Access_mode)
@@ -34,3 +35,14 @@ class DepartmentUser(Base):
     name: Mapped[Departments] = mapped_column(default=Departments.General)
 
     users: Mapped[list['User']] = relationship("User", back_populates="department")
+
+
+class UploadedFile(Base):
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    filename: Mapped[str]
+    filepath: Mapped[str]
+    user_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
+
+    user_file: Mapped['User'] = relationship("User", back_populates="files")
+
+

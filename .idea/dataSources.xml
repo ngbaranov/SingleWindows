@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="single_windows_db@localhost" uuid="8a82ddc5-862c-4352-a8b8-caf4df007e7a">
+    <data-source source="LOCAL" name="single_windows_db@ubntrzhm.zvetmet.ru" uuid="58d96cda-41b3-410d-a972-84348abb0d3a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/single_windows_db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="single_windows_db@164.132.3.207" uuid="d035877f-9b48-4d2f-9cca-5a3954a8e1e6">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://164.132.3.207:5432/single_windows_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ubntrzhm.zvetmet.ru:5432/single_windows_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

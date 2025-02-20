@@ -14,10 +14,11 @@ COPY ./requirements.txt /code/requirements.txt
 # Копируем файл requirements.txt и устанавливаем зависимости
 RUN pip install --no-cache-dir -r /code/requirements.txt
 
-# Копируем файл config.py и alembic.ini
 
 
-# Копируем файл .env
+
+# Создаем директорию для загрузки файлов и устанавливаем права
+RUN mkdir -p /code/app/static/files && chmod -R 777 /code/app/static/files
 
 
 # Открываем порт для приложения
