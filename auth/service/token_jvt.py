@@ -17,5 +17,5 @@ async def create_access_token(username: str, user_id: int, is_admin: bool, expir
 async def request_token(request: Request):
     token = request.cookies.get('access_token')
     if token is None:
-        raise HTTPException(status_code=401, detail="No access token supplied")
+        raise HTTPException(status_code=401, detail="Зайдите или авторизуйтесь")
     return token

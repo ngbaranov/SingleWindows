@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Finish create names and keywords search">
-      <change afterPath="$PROJECT_DIR$/app/routers/add_document.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/delete_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migration/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/get_user_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/get_user_id.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/input_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/input_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/get_input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/get_input_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/input_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/input_violation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/input_violation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Work on authorship">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/input_violation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/input_violation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/service/token_jvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/service/token_jvt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +162,11 @@
       <workItem from="1740030811616" duration="22000" />
       <workItem from="1740031043796" duration="14000" />
       <workItem from="1740051552100" duration="4382000" />
+      <workItem from="1740057955147" duration="988000" />
+      <workItem from="1740397858273" duration="2888000" />
+      <workItem from="1740400788198" duration="3594000" />
+      <workItem from="1740467069843" duration="693000" />
+      <workItem from="1740485851931" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -200,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737705825350</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Work on authorship">
+      <option name="closed" value="true" />
+      <created>1740058138994</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740058138994</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +221,8 @@
     <MESSAGE value="Preparing for database adjustments" />
     <MESSAGE value="Create surname, name, last_name" />
     <MESSAGE value="Finish create names and keywords search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish create names and keywords search" />
+    <MESSAGE value="Work on authorship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on authorship" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
