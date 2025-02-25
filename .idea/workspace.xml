@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Work on authorship">
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/input_violation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/input_violation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/service/token_jvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/service/token_jvt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/templates/forms.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/forms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/reg.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +169,7 @@
       <workItem from="1740400788198" duration="3594000" />
       <workItem from="1740467069843" duration="693000" />
       <workItem from="1740485851931" duration="309000" />
+      <workItem from="1740486476766" duration="5052000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -200,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740058138994</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям">
+      <option name="closed" value="true" />
+      <created>1740486658811</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740486658811</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +233,8 @@
     <MESSAGE value="Create surname, name, last_name" />
     <MESSAGE value="Finish create names and keywords search" />
     <MESSAGE value="Work on authorship" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on authorship" />
+    <MESSAGE value="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
