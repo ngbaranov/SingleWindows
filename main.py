@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app.routers import (input_user, index, get_user_id, input_violation, get_search, advanced_search, keyword_search,
-                         add_document, delete_user)
+                         add_document, delete_user, admin_panel)
 from auth import auth_routher
 
 app = FastAPI()
@@ -18,6 +18,7 @@ app.include_router(keyword_search.router)
 app.include_router(add_document.router)
 app.include_router(delete_user.router)
 app.include_router(auth_routher.router)
+app.include_router(admin_panel.router)
 
 
 

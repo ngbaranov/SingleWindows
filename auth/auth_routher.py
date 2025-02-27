@@ -49,7 +49,7 @@ async def create_user(
     new_user = await AdminDAO.add(db, username=username, password=password)
     new_token = await create_access_token(new_user.username, new_user.id, new_user.is_admin, expires_delta=timedelta(minutes=20))
 
-    response = RedirectResponse(url="/input_user", status_code=302)
+    response = RedirectResponse(url="/admin_panel/", status_code=302)
     response.set_cookie(key='access_token', value=new_token, httponly=True)
 
     # answer = "Пользователь успешно создан"
@@ -65,12 +65,23 @@ async def read_item(request: Request):
 
 
 @router.post('/token')
-async def login(response: Response, request: Request, db: Annotated[AsyncSession, Depends(get_db)], form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
+# async def login(response: Response, request: Request, db: Annotated[AsyncSession, Depends(get_db)], form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
+#     user = await authenticate_user(db, form_data.username, form_data.password)
+#     token = await create_access_token(user.username, user.id, user.is_admin, expires_delta=timedelta(minutes=20))
+#     response.set_cookie(key='access_token', value=token, httponly=True)
+#     return templates.TemplateResponse(
+#         "admin_panel.html",
+#         {"request": request},
+#         headers=response.headers  # Передаем заголовки с Set-Cookie
+#     )
+async def login(
+    response: Response,
+    request: Request,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends()]
+):
     user = await authenticate_user(db, form_data.username, form_data.password)
     token = await create_access_token(user.username, user.id, user.is_admin, expires_delta=timedelta(minutes=20))
+    response = RedirectResponse(url="/admin_panel/", status_code=302)
     response.set_cookie(key='access_token', value=token, httponly=True)
-    return templates.TemplateResponse(
-        "input_user.html",
-        {"request": request},
-        headers=response.headers  # Передаем заголовки с Set-Cookie
-    )
+    return response

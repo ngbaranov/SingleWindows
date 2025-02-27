@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям">
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="login, auth bootstrap 5">
+      <change afterPath="$PROJECT_DIR$/app/routers/admin_panel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/templates/forms.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/forms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/reg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/auth_routher.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth_routher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,6 +49,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;FastAPI.SingleWindows.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -169,7 +171,10 @@
       <workItem from="1740400788198" duration="3594000" />
       <workItem from="1740467069843" duration="693000" />
       <workItem from="1740485851931" duration="309000" />
-      <workItem from="1740486476766" duration="5052000" />
+      <workItem from="1740486476766" duration="5336000" />
+      <workItem from="1740567193985" duration="1777000" />
+      <workItem from="1740636963810" duration="9696000" />
+      <workItem from="1740662226134" duration="2094000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -211,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740486658811</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="login, auth bootstrap 5">
+      <option name="closed" value="true" />
+      <created>1740492028821</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740492028821</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +247,8 @@
     <MESSAGE value="Finish create names and keywords search" />
     <MESSAGE value="Work on authorship" />
     <MESSAGE value="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям" />
+    <MESSAGE value="login, auth bootstrap 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="login, auth bootstrap 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
