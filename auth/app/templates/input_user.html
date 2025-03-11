@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}Информация о сотруднике{% endblock %}
+{% block content %}
+<h1 class="mb-3">Информация о сотруднике</h1>
+<div class="form-container">
+    <form method="POST" action="get_input_user" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="surname" class="form-label">Фамилия:</label>
+            <input type="text" class="form-control" id="surname" name="surname" required>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Отчество:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="department" class="form-label">Департамент:</label>
+            <select id="department" class="form-select" name="department" required>
+                <option value="General" selected>Общий отдел</option>
+                <option value="Management">Руководство</option>
+                <option value="Administrative">Административный отдел</option>
+                <option value="Accounting">Бухгалтерия</option>
+                <option value="Metrology">Бюро метрологии</option>
+                <option value="Passes">Бюро пропусков</option>
+                <option value="Dispatcher">Диспетчерская служба</option>
+                <option value="Medical">Здравпункт</option>
+                <option value="Commercial">Коммерческий отдел</option>
+                <option value="Moscow">Московское отделение</option>
+                <option value="Mehanical">Отдел главного механика</option>
+                <option value="Power">Отдел главного энергетика</option>
+                <option value="IT">Отдел информационных технологий</option>
+                <option value="HR">Отдел кадров</option>
+                <option value="Logistics">Отдел логистики</option>
+                <option value="Safety">Охрана труда</option>
+                <option value="OTK">ОТК</option>
+                <option value="Builders">Отдел эксплуатации зданий и сооружений</option>
+                <option value="Secrecy">1 отдел</option>
+                <option value="Technical">Производственно-технический отдел</option>
+                <option value="Repair">Ремонтно-строительный участок</option>
+                <option value="Composition">Складское хозяйство</option>
+                <option value="Security">СБиР</option>
+                <option value="Quality">Служба качества</option>
+                <option value="Financial">Финансовый отдел</option>
+                <option value="Legal">Юридический отдел</option>
+                <option value="Trade">Профсоюзный комитет</option>
+                <option value="Cafe">Столовая</option>
+                <option value="Transport">Транспортная служба</option>
+                <option value="Power_suple">Участок электроснабжения</option>
+                <option value="Workshop">ЦАП</option>
+                <option value="First_section">Участок №1</option>
+                <option value="Precious_metals">Участок по аффинажу драгметаллов</option>
+                <option value="Gold">Передел аффинажа золота</option>
+                <option value="Silver">Передел аффинажа серебра</option>
+                <option value="Platinum">Передел аффинажа платины</option>
+                <option value="Rhodium">Передел аффинажа родия и иридия</option>
+                <option value="Recycling">Передел переработки катализаторов</option>
+                <option value="laboratory">Центральная лаборатория</option>
+                <option value="Cleaning">Участок бытового обслуживания</option>
+                <option value="outside">Другие организации</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="hired" class="form-label">Дата принятия на работу:</label>
+            <input type="date" class="form-control" id="hired" name="hired">
+        </div>
+        <div class="mb-3">
+            <label for="dismissal" class="form-label">Дата увольнения:</label>
+            <input type="date" class="form-control" id="dismissal" name="dismissal">
+        </div>
+        <hr class="my-4">
+        <!-- Блок с информацией о нарушении -->
+        <h2 class="mb-3">Информация о нарушении</h2>
+        <div class="form-group">
+            <label for="type_violation" class="form-label">Форма нарушения:</label>
+            <select id="type_violation" class="form-select" name="type_violation">
+                <option value="Access_mode" selected>Пропускной режим</option>
+                <option value="Information_security">Информационная безопасность</option>
+                <option value="Work_schedule">Трудовой распорядок</option>
+                <option value="Other">Другое</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date_violation" class="form-label">Дата нарушения:</label>
+            <input type="date" class="form-control" id="date_violation" name="date_violation">
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Суть нарушения:</label>
+            <textarea class="form-control" rows="12" cols="43" id="description" name="description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="uploaded_files" class="form-label">Загрузить файлы:</label>
+            <input type="file" class="form-control" id="uploaded_files" name="uploaded_files" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Отправить</button>
+    </form>
+</div>
+
+{% endblock %}

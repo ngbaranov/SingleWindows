@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="login, auth bootstrap 5">
-      <change afterPath="$PROJECT_DIR$/app/routers/admin_panel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="admin panel">
+      <change afterPath="$PROJECT_DIR$/app/routers/update_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/servise/get_letters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/index.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/auth_routher.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth_routher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/admin_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/admin_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/delete_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/delete_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -97,8 +106,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
-        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43" />
+        <option value="bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43" />
       </set>
     </attachedChunks>
   </component>
@@ -174,7 +183,19 @@
       <workItem from="1740486476766" duration="5336000" />
       <workItem from="1740567193985" duration="1777000" />
       <workItem from="1740636963810" duration="9696000" />
-      <workItem from="1740662226134" duration="2094000" />
+      <workItem from="1740662226134" duration="2703000" />
+      <workItem from="1740724516570" duration="1266000" />
+      <workItem from="1740725799904" duration="4985000" />
+      <workItem from="1740987609965" duration="4000" />
+      <workItem from="1741000866820" duration="5909000" />
+      <workItem from="1741160606969" duration="63000" />
+      <workItem from="1741160675645" duration="1295000" />
+      <workItem from="1741162007696" duration="1743000" />
+      <workItem from="1741172136250" duration="3515000" />
+      <workItem from="1741257530099" duration="4011000" />
+      <workItem from="1741586948875" duration="2186000" />
+      <workItem from="1741595206076" duration="3000" />
+      <workItem from="1741690970656" duration="4444000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -224,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740492028821</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="admin panel">
+      <option name="closed" value="true" />
+      <created>1740664914211</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740664914211</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +277,8 @@
     <MESSAGE value="Work on authorship" />
     <MESSAGE value="Добавил вход на страницу добавления нарушителей и нарушений только авторитезированным пользователям" />
     <MESSAGE value="login, auth bootstrap 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="login, auth bootstrap 5" />
+    <MESSAGE value="admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin panel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,11 +290,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/models/models.py</url>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/input_user.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/auth/auth_routher.py</url>

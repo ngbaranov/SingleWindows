@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <h2>Поиск сотрудников</h2>
         <div id="alphabet-filter" class="d-flex flex-wrap">
-            {% for letter in available_letters %}
+            {% for letter in "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" %}
                 <button class="btn btn-outline-primary m-1 filter-letter" data-letter="{{ letter }}">{{ letter }}</button>
             {% endfor %}
         </div>

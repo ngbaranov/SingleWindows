@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Информация о работнике{% endblock %}
+{% block content %}
+
+    <h2>Данные работника</h2>
+    <p>Имя: {{ user.surname }}</p>
+    <p>Фамилия: {{ user.name }}</p>
+    <p>Отчество: {{ user.last_name }}</p>
+    <p>Департамент: {{ department }}</p>
+    {% if user.hired %}
+    <p>Дата принятия на работу: {{ user.hired }}</p>
+    {% elif user.dismissal %}
+    <p>Дата увольнения с работы: {{ user.dismissal }}</p>
+    {% endif %}
+    <hr>
+    {% if violation.date_violation %}
+    <h2>Данные нарушения</h2>
+    <p>Форма нарушения:<br> {{ type_violation }}</p>
+    <p>Дата нарушения:<br> {{ violation.date_violation }}</p>
+    <p>Суть нарушения:<br> {{ violation.description }}</p>
+    {% else %}
+    <h4>Нарушения отсутствуют</h4>
+    {% endif %}
+    {% if files %}
+`   <h2>Загруженные файлы</h2>
+    <a href="/static/files/{{ files.filename }}" download>{{ files.filename }}</a>
+    {% else %}
+    <h4>Файлы отсутствуют</h4>
+    {% endif %}
+
+{% endblock %}

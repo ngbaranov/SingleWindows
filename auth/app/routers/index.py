@@ -9,7 +9,6 @@ from app.dao.dao import UsersDAO
 from app.database.db_depends import get_db
 from app.models.models import User
 from app.models.sql_enums import Departments
-from app.servise.get_letters import get_available_letters
 
 router = APIRouter()
 
@@ -31,11 +30,10 @@ templates = Jinja2Templates(directory="app/templates")
 @router.get("/")
 async def admin_panel(request: Request, db: Annotated[AsyncSession, Depends(get_db)]):
     users = await UsersDAO.get_all_users(db)
-    available_letters = await get_available_letters(db)
     violations = {
         "Access_mode": "Пропускной режим",
         "Information_security": "Информационная безопасность",
         "Work_schedule": "Трудовой распорядок",
         "Other": "Другое"
     }
-    return templates.TemplateResponse("index.html", {"request": request, "users": users, "violations": violations, "available_letters": available_letters})
+    return templates.TemplateResponse("index.html", {"request": request, "users": users, "violations": violations})

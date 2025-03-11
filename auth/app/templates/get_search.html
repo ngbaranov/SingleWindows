@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Поиск{% endblock %}
+{% block content %}
+<div class="container my-5 border p-3 rounded mb-3">
+    <h2>Результаты поиска</h2>
+    {% for user in users %}
+    <div class="my-3"><a href="/user/{{ user.id }}">{{ user.surname }} {{user.name}} {{user.last_name}}</a></div>
+    {% endfor %}
+</div>
+{% endblock %}
