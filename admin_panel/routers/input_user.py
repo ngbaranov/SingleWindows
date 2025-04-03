@@ -12,9 +12,9 @@ from app.models.sql_enums import Departments, TypeViolation
 from typing import Annotated
 
 from auth.service.current_user import get_current_admin_user
-
+from admin_panel.service.header_admin_base import header_admin
 router = APIRouter(prefix="/input_user", tags=["input_user"])
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory=["app/templates", "admin_panel/templates"])
 
 
 @router.get("/")

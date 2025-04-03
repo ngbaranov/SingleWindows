@@ -10,9 +10,10 @@ from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO
 from app.database.db_depends import get_db
 from app.models.sql_enums import Departments, TypeViolation
 from auth.service.current_user import get_current_admin_user
+from admin_panel.service.header_admin_base import header_admin
 
 router = APIRouter(prefix="/input_violation", tags=["input_violation"])
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory=["app/templates", "admin_panel/templates"])
 
 @router.get("/{id}")
 async def get_input_violation(request: Request, id: int, db: Annotated[AsyncSession, Depends(get_db)], admin_user: dict = Depends(get_current_admin_user)):
@@ -30,4 +31,8 @@ async def input_violation(request: Request, id: int, db: Annotated[AsyncSession,
     await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
                             description=description, user_id=id)
     user = await UsersDAO.get_user_by_id(db, id)
-    return templates.TemplateResponse("user.html", {"request": request, "user": user})
+    # base_url = str(request.base_url)
+    # is_admin = request.headers.get("Referer", "").startswith(f"{base_url}input_violation/{user.id}")
+    is_admin = await header_admin(request, f"input_violation/{user.id}")
+
+    return templates.TemplateResponse("user.html", {"request": request, "user": user, "is_admin": is_admin})

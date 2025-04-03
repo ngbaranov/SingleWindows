@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from app.routers import (input_user, index, get_user_id, input_violation, get_search, advanced_search, keyword_search,
-                         add_document, delete_user)
+from app.routers import (index, get_user_id, get_search, advanced_search, keyword_search)
+from admin_panel.routers import input_user, delete_user, add_document, input_violation
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")

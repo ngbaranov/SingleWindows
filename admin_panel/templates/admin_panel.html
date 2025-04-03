@@ -1,0 +1,64 @@
+{% extends 'admin_base.html' %}
+{% block title %}Админ панель{% endblock %}
+{% block content %}
+
+
+<div class="container mt-4">
+    <h2>Поиск сотрудников</h2>
+            <div id="alphabet-filter" class="d-flex flex-wrap">
+            {% for letter in available_letters %}
+                <button class="btn btn-outline-primary m-1 filter-letter" data-letter="{{ letter }}">{{ letter }}</button>
+            {% endfor %}
+        </div>
+    <input type="text" id="search" class="form-control mt-3" placeholder="Введите фамилию...">
+    <ul id="user-results" class="list-group mt-2" style="display: none;"></ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let users = [
+            {% for user in users %}
+                { id: {{ user.id }}, surname: "{{ user.surname or '' }}", full_name: "{{ user.surname or '' }} {{ user.name or '' }} {{ user.last_name or '' }}" },
+            {% endfor %}
+        ];
+
+        const resultsList = document.getElementById("user-results");
+
+        function renderResults(matches) {
+            resultsList.innerHTML = "";
+            if (matches.length > 0) {
+                resultsList.style.display = "block";
+                matches.forEach(user => {
+                    let listItem = document.createElement("li");
+                    listItem.className = "list-group-item";
+                    listItem.innerHTML = `<a href="/user/${user.id}">${user.full_name}</a>`;
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                resultsList.style.display = "none";
+            }
+        }
+
+        document.getElementById("search").addEventListener("input", function() {
+            let query = this.value.toLowerCase();
+            if (query.length === 0) {
+                resultsList.style.display = "none";
+                return;
+            }
+            let matches = users.filter(user => user.surname.toLowerCase().startsWith(query));
+            renderResults(matches);
+        });
+
+        document.querySelectorAll(".filter-letter").forEach(button => {
+            button.addEventListener("click", function() {
+                document.getElementById("search").value = "";  // Сбросить input
+                let letter = this.getAttribute("data-letter").toLowerCase();
+                let filtered = users.filter(user => user.surname.toLowerCase().startsWith(letter));
+                renderResults(filtered);
+            });
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

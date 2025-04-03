@@ -1,4 +1,9 @@
-{% extends 'base.html' %}
+{% if is_admin %}
+    {% extends 'admin_base.html' %}
+{% else %}
+    {% extends 'base.html' %}
+{% endif %}
+
 {% block title %}Информация о сотруднике{% endblock %}
 {% block content %}
 
@@ -62,6 +67,7 @@
 
 
 </div>
+{% if is_admin %}
 <div class="container d-flex justify-content-between mb-5">
     <a href="/input_violation/{{ user.id }}" class="btn btn-outline-primary d-inline-flex align-items-center">
         <i class="bi bi-plus-circle me-2"></i> Добавить нарушение
@@ -73,4 +79,5 @@
         </button>
     </form>
 </div>
+{% endif %}
 {% endblock %}

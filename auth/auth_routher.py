@@ -17,7 +17,7 @@ from auth.service.token_jvt import create_access_token
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
-templates = Jinja2Templates(directory=["auth/templates", "app/templates"])
+templates = Jinja2Templates(directory=["auth/templates", "app/templates", "admin_panel/templates"])
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 

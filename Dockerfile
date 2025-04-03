@@ -12,6 +12,7 @@ COPY ./.env /code/.env
 COPY ./requirements.txt /code/requirements.txt
 COPY ./main.py /code/main.py
 COPY ./auth /code/auth
+COPY ./admin_panel /code/admin_panel
 
 # Копируем файл requirements.txt и устанавливаем зависимости
 RUN pip install --no-cache-dir -r /code/requirements.txt

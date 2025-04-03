@@ -14,3 +14,7 @@ services:
       - DB_PORT=${DB_PORT}
     env_file:
       - .env
+    volumes:
+      - static_volume:/app/static
+volumes:
+  static_volume:

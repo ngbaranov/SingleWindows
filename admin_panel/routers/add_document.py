@@ -14,7 +14,7 @@ from app.models.models import UploadedFile
 from app.dao.dao import UploadedFilesDAO, UsersDAO
 
 router = APIRouter(prefix="/input_violation", tags=["input_violation"])
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory=["app/templates", "admin_panel/templates"] )
 @router.post("/upload_file/{user_id}")
 async def upload_file(request: Request, user_id: int, db: Annotated[AsyncSession, Depends(get_db)], uploaded_file: UploadFile = File(...)):
 
@@ -31,4 +31,6 @@ async def upload_file(request: Request, user_id: int, db: Annotated[AsyncSession
     # Сохранение информации о файле в БД
     await UploadedFilesDAO.add(db, user_id=user_id, filename=uploaded_file.filename, filepath=file_path)
     user = await UsersDAO.get_user_by_id(db, user_id)
-    return templates.TemplateResponse("user.html", {"request": request, "user": user})
+    base_url = str(request.base_url)
+    is_admin = request.headers.get("Referer", "").startswith(f"{base_url}input_violation/{user.id}")
+    return templates.TemplateResponse("user.html", {"request": request, "user": user, "is_admin": is_admin})

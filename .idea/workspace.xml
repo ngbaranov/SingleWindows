@@ -4,56 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="start update all">
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="folder admin_panel">
+      <change afterPath="$PROJECT_DIR$/admin_panel/service/header_admin_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/input_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/dao/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/dao/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/dao/dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/database/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/database/db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/database/db_depends.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/50e910f579c5_remove_upload_date_table_uploadedfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/6790796eeb80_optional_hiring_field.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/6d9905f2fd00_add_admin_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/76f53556b2c3_initial_revision.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/831ed78ae80e_add_last_and_middle_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/migration/versions/86deaa0ac723_add_table_uploadedfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/models/sql_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/add_document.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/admin_panel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/advanced_search.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/delete_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/get_search.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/get_user_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/input_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/input_violation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/routers/keyword_search.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/static/index_js.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/static/index_styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/static/js/sw_script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/static/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/advanced_search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/get_advanced_search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/get_input_user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/get_search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/index.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/input_user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/input_violation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/app/templates/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/add_document.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/add_document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/admin_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/admin_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/delete_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/delete_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/get_user_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/get_user_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/input_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/input_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/input_violation.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/input_violation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/update_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/update_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/admin_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/get_input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/get_input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/input_violation.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/input_violation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/auth_routher.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth_routher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -117,6 +89,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin_panel/templates" />
+      <recent name="$PROJECT_DIR$/admin_panel/routers" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -141,8 +115,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43" />
-        <option value="bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -233,7 +207,25 @@
       <workItem from="1741690970656" duration="7142000" />
       <workItem from="1741760393034" duration="8808000" />
       <workItem from="1741785978289" duration="5000" />
-      <workItem from="1741864785685" duration="392000" />
+      <workItem from="1741864785685" duration="1475000" />
+      <workItem from="1741951281083" duration="4261000" />
+      <workItem from="1742203311347" duration="1375000" />
+      <workItem from="1742207360780" duration="4635000" />
+      <workItem from="1742298478372" duration="961000" />
+      <workItem from="1742299445497" duration="5852000" />
+      <workItem from="1742365748909" duration="590000" />
+      <workItem from="1742390837937" duration="635000" />
+      <workItem from="1742468997819" duration="2903000" />
+      <workItem from="1742475673165" duration="3097000" />
+      <workItem from="1743063306221" duration="144000" />
+      <workItem from="1743066318590" duration="865000" />
+      <workItem from="1743067202474" duration="33000" />
+      <workItem from="1743074670378" duration="2114000" />
+      <workItem from="1743151963052" duration="639000" />
+      <workItem from="1743158925747" duration="203000" />
+      <workItem from="1743425653844" duration="3751000" />
+      <workItem from="1743503182983" duration="3587000" />
+      <workItem from="1743678827807" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -299,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741697819932</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="folder admin_panel">
+      <option name="closed" value="true" />
+      <created>1741865563673</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741865563673</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +325,8 @@
     <MESSAGE value="login, auth bootstrap 5" />
     <MESSAGE value="admin panel" />
     <MESSAGE value="start update all" />
-    <option name="LAST_COMMIT_MESSAGE" value="start update all" />
+    <MESSAGE value="folder admin_panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder admin_panel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
