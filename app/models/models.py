@@ -25,6 +25,7 @@ class User(Base):
 class Violations(Base):
     type_violation: Mapped[TypeViolation | None] = mapped_column(default=TypeViolation.Access_mode)
     date_violation: Mapped[datetime | None]
+
     description: Mapped[str | None]
     user_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
 

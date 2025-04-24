@@ -7,7 +7,7 @@ SECRET_KEY = settings.SECRET_KEY
 ALGORITHM = settings.ALGORITHM
 
 
-async def create_access_token(username: str, user_id: int, is_admin: bool, expires_delta: timedelta):
+async def create_access_token(username: str, user_id: int, is_admin: bool, expires_delta: timedelta = timedelta(hours=1)):
     encode = {'sub': username, 'id': user_id, 'is_admin': is_admin}
     expires = datetime.now(timezone.utc) + expires_delta
     encode.update({"exp": expires})

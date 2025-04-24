@@ -1,0 +1,77 @@
+{% extends 'admin_base.html' %}
+{% block title %}Редактирование сотрудника{% endblock %}
+{% block content %}
+<h1 class="mb-3">Редактирование информации о сотруднике</h1>
+<div class="form-container">
+    <form method="POST" action="/edit_all/save_edit/{{ user.id }}" enctype="multipart/form-data">
+        <!-- ФИО -->
+        <div class="mb-3">
+            <label for="surname" class="form-label">Фамилия:</label>
+            <input type="text" class="form-control" id="surname" name="surname" value="{{ user.surname or '' }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя:</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ user.name or '' }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Отчество:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name or '' }}" required>
+        </div>
+
+        <!-- Департамент (только для отображения) -->
+        <div class="mb-3">
+            <label for="department" class="form-label">Департамент:</label>
+            <input type="text" class="form-control" value="{{ user.department.name.value }}" disabled>
+        </div>
+
+        <!-- Дата принятия и увольнения -->
+        <div class="mb-3">
+            <label for="hired" class="form-label">Дата принятия на работу:</label>
+            <input type="date" class="form-control" id="hired" name="hired" value="{{ user.hired }}">
+        </div>
+        <div class="mb-3">
+            <label for="dismissal" class="form-label">Дата увольнения:</label>
+            <input type="date" class="form-control" id="dismissal" name="dismissal" value="{{ user.dismissal }}">
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Нарушения -->
+        <h2 class="mb-3">Нарушения</h2>
+        {% for violation in user.violations %}
+        {% set idx = loop.index0 %}
+        <div class="border rounded p-3 mb-3">
+            <input type="hidden" name="violation_ids" value="{{ violation.id }}">
+            <div class="form-group mb-2">
+                <label for="type_violation_{{ idx }}" class="form-label">Форма нарушения:</label>
+                <select id="type_violation_{{ idx }}" class="form-select" name="type_violation_{{ idx }}">
+                    <option value="Access_mode" {{ 'selected' if violation.type_violation.name == 'Access_mode' else '' }}>Пропускной режим</option>
+                    <option value="Information_security" {{ 'selected' if violation.type_violation.name == 'Information_security' else '' }}>Информационная безопасность</option>
+                    <option value="Work_schedule" {{ 'selected' if violation.type_violation.name == 'Work_schedule' else '' }}>Трудовой распорядок</option>
+                    <option value="Other" {{ 'selected' if violation.type_violation.name == 'Other' else '' }}>Другое</option>
+                </select>
+            </div>
+            <div class="form-group mb-2">
+                <label for="date_violation_{{ idx }}" class="form-label">Дата нарушения:</label>
+                <input type="date" class="form-control" id="date_violation_{{ idx }}" name="date_violation_{{ idx }}" value="{{ violation.date_violation.strftime('%Y-%m-%d') if violation.date_violation }}">
+            </div>
+            <div class="form-group mb-2">
+                <label for="description_{{ idx }}" class="form-label">Суть нарушения:</label>
+                <textarea class="form-control" rows="5" id="description_{{ idx }}" name="description_{{ idx }}">{{ violation.description }}</textarea>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Загрузка дополнительных файлов (если нужно) -->
+        <div class="mb-3">
+            <label for="uploaded_files" class="form-label">Загрузить файлы:</label>
+            <input type="file" class="form-control" id="uploaded_files" name="uploaded_files" multiple>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a href="/user/{{ user.id }}" class="btn btn-secondary">Отмена</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
