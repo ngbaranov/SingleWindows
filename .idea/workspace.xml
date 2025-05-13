@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="File deletion with the user">
-      <change afterPath="$PROJECT_DIR$/admin_panel/routers/edit_all.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin_panel/templates/edit_all.html" afterDir="false" />
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="The beginning of the addition of tags">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/service/token_jvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/service/token_jvt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migration/versions/6d9905f2fd00_add_admin_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migration/versions/76f53556b2c3_initial_revision.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migration/versions/831ed78ae80e_add_last_and_middle_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/versions/831ed78ae80e_add_last_and_middle_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migration/versions/f3572504bb09_initial_revision.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/versions/f3572504bb09_initial_revision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +101,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.122" />
+        <option value="bundled-python-sdk-880ecab49056-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.122" />
       </set>
     </attachedChunks>
   </component>
@@ -223,6 +224,12 @@
       <workItem from="1744371826551" duration="313000" />
       <workItem from="1744716087790" duration="259000" />
       <workItem from="1744800801846" duration="38000" />
+      <workItem from="1745494320199" duration="1919000" />
+      <workItem from="1745497579643" duration="3864000" />
+      <workItem from="1745576368027" duration="1331000" />
+      <workItem from="1745585919919" duration="17000" />
+      <workItem from="1747038770295" duration="52000" />
+      <workItem from="1747038849646" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -304,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743681269108</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="The beginning of the addition of tags">
+      <option name="closed" value="true" />
+      <created>1745494484915</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745494484915</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +347,8 @@
     <MESSAGE value="start update all" />
     <MESSAGE value="folder admin_panel" />
     <MESSAGE value="File deletion with the user" />
-    <option name="LAST_COMMIT_MESSAGE" value="File deletion with the user" />
+    <MESSAGE value="The beginning of the addition of tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="The beginning of the addition of tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
