@@ -1,90 +1,119 @@
 {% extends 'base.html' %}
 {% block title %}Главная страница{% endblock %}
 {% block content %}
-    <div class="container mt-4">
-        <h2>Поиск сотрудников</h2>
-        <div id="alphabet-filter" class="d-flex flex-wrap">
-            {% for letter in available_letters %}
-                <button class="btn btn-outline-primary m-1 filter-letter" data-letter="{{ letter }}">{{ letter }}</button>
-            {% endfor %}
-        </div>
-            <ul id="filtered-users" class="list-group mt-2"></ul>
-            <input type="text" id="search" class="form-control" placeholder="Введите фамилию...">
-            <ul id="results" class="list-group mt-2" style="display: none;"></ul>
-        <p class="h3 mt-5">Поиск по типу нарушений</p>
-        <div class="row">
-            {% for violation_key, violation_value in violations.items() %}
-            <div class="col-md-6">
-                <a href="/advanced_search/{{ violation_key }}">{{ violation_value }}</a>
-            </div>
-            {% endfor %}
+<div class="container mt-4">
+    <h2>Поиск сотрудников</h2>
+    <div id="alphabet-filter" class="d-flex flex-wrap">
+        {% for letter in available_letters %}
+        <button class="btn btn-outline-primary m-1 filter-letter" data-letter="{{ letter }}">{{ letter }}</button>
+        {% endfor %}
     </div>
+    <ul id="filtered-users" class="list-group mt-2"></ul>
+    <input type="text" id="search" class="form-control" placeholder="Введите фамилию...">
+    <ul id="results" class="list-group mt-2" style="display: none;"></ul>
+
+<!--    <p class="h3 mt-5">Поиск по типу нарушений</p>-->
+<!--    <div class="row">-->
+<!--        {% for violation_key, violation_value in violations.items() %}-->
+<!--        <div class="col-md-6">-->
+<!--            <a href="/advanced_search/{{ violation_key }}">{{ violation_value }}</a>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+    <p class="h3 mt-5">Поиск по тегам нарушений</p>
+    <div class="row">
+        {% for tag in tags %}
+        <div class="col-md-4 mb-2">
+            <a href="#" class="tag-link" data-tag="{{ tag }}">{{ tag }}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <ul id="tag-users" class="list-group mt-2"></ul>
+
+
     <p class="h3 mt-5">Поиск по ключевым словам</p>
     <div class="row mt-3">
         <form method="get" class="d-flex ms-auto" action="/keyword_search">
-            <input class="form-control me-2" type="search" name="keyword" placeholder="Введите  ключевые слова" aria-label="Поиск">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Введите  ключевые слова"
+                   aria-label="Поиск">
             <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
     </div>
 
-    </div>
+</div>
 
-<!--    <div class="container mt-4">-->
-<!--        <h3>Фильтр по первой букве фамилии</h3>-->
-<!--        <div id="alphabet-filter" class="d-flex flex-wrap">-->
-<!--            {% for letter in "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" %}-->
-<!--                <button class="btn btn-outline-primary m-1 filter-letter" data-letter="{{ letter }}">{{ letter }}</button>-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-<!--        <ul id="filtered-users" class="list-group mt-2"></ul>-->
-<!--    </div>-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const users = {{ users | tojson | safe }};
+        const usersByTag = {{ users_by_tag | tojson | safe }};
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let users = [
-                {% for user in users %}
-                    { id: {{ user.id }}, surname: "{{ user.surname or '' }}", full_name: "{{ user.surname or '' }} {{ user.name or '' }} {{ user.last_name or '' }}" },
-                {% endfor %}
-            ];
+        const searchInput = document.getElementById("search");
+        const resultsList = document.getElementById("results");
+        const filteredList = document.getElementById("filtered-users");
+        const tagList = document.getElementById("tag-users");
 
-            document.getElementById("search").addEventListener("input", function() {
-                let query = this.value.toLowerCase();
-                let matches = users.filter(user => user.surname.toLowerCase().startsWith(query));
-                let resultsList = document.getElementById("results");
-                resultsList.innerHTML = "";
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            const matches = users.filter(user => (user.surname || '').toLowerCase().startsWith(query));
+            resultsList.innerHTML = "";
 
-                if (query.length > 0 && matches.length > 0) {
-                    resultsList.style.display = "block";
-                    matches.forEach(user => {
-                        let listItem = document.createElement("li");
-                        listItem.className = "list-group-item";
-                        listItem.innerHTML = `<a href="/user/${user.id}">${user.full_name}</a>`;
-                        resultsList.appendChild(listItem);
-                    });
-                } else {
-                    resultsList.style.display = "none";
-                }
-            });
+            if (query.length > 0 && matches.length > 0) {
+                resultsList.style.display = "block";
+                matches.forEach(user => {
+                    const fullName = `${user.surname || ''} ${user.name || ''} ${user.last_name || ''}`.trim();
+                    const listItem = document.createElement("li");
+                    listItem.className = "list-group-item";
+                    listItem.innerHTML = `<a href="/user/${user.id}">${fullName}</a>`;
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                resultsList.style.display = "none";
+            }
+        });
 
-            document.querySelectorAll(".filter-letter").forEach(button => {
-                button.addEventListener("click", function() {
-                    let letter = this.getAttribute("data-letter");
-                    let filtered = users.filter(user => user.surname.startsWith(letter));
-                    let list = document.getElementById("filtered-users");
-                    list.innerHTML = "";
+        document.querySelectorAll(".filter-letter").forEach(button => {
+            button.addEventListener("click", function () {
+                const letter = this.getAttribute("data-letter").toLowerCase();
+                const filtered = users.filter(user => (user.surname || '').toLowerCase().startsWith(letter));
+                filteredList.innerHTML = "";
+                tagList.innerHTML = "";
+                resultsList.style.display = "none";
 
-                    if (filtered.length > 0) {
-                        filtered.forEach(user => {
-                            let listItem = document.createElement("li");
-                            listItem.className = "list-group-item";
-                            listItem.innerHTML = `<a href="/user/${user.id}">${user.full_name}</a>`;
-                            list.appendChild(listItem);
-                        });
-                    }
+                filtered.forEach(user => {
+                    const fullName = `${user.surname || ''} ${user.name || ''} ${user.last_name || ''}`.trim();
+                    const listItem = document.createElement("li");
+                    listItem.className = "list-group-item";
+                    listItem.innerHTML = `<a href="/user/${user.id}">${fullName}</a>`;
+                    filteredList.appendChild(listItem);
                 });
             });
         });
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        document.querySelectorAll(".tag-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                const tag = this.getAttribute("data-tag");
+                tagList.innerHTML = "";
+                filteredList.innerHTML = "";
+                resultsList.style.display = "none";
+
+                if (usersByTag[tag]) {
+                    usersByTag[tag].forEach(user => {
+                        const fullName = `${user.surname || ''} ${user.name || ''} ${user.last_name || ''}`.trim();
+                        const listItem = document.createElement("li");
+                        listItem.className = "list-group-item";
+                        listItem.innerHTML = `<a href="/user/${user.id}">${fullName}</a>`;
+                        tagList.appendChild(listItem);
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

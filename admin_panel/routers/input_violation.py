@@ -25,10 +25,11 @@ async def get_input_violation(request: Request, id: int, db: Annotated[AsyncSess
 async def input_violation(request: Request, id: int, db: Annotated[AsyncSession, Depends(get_db)],
                           type_violation: str = Form(),
                           date_violation: str = Form(),
+                          tags: str = Form(),
                           description: str = Form(),
                           ):
     date_violation = datetime.strptime(date_violation, "%Y-%m-%d").date() if date_violation else None
-    await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
+    await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation, tags=tags,
                             description=description, user_id=id)
     user = await UsersDAO.get_user_by_id(db, id)
     # base_url = str(request.base_url)

@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="The beginning of the addition of tags">
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Settings tags">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migration/versions/6d9905f2fd00_add_admin_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migration/versions/76f53556b2c3_initial_revision.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migration/versions/831ed78ae80e_add_last_and_middle_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/versions/831ed78ae80e_add_last_and_middle_name.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migration/versions/f3572504bb09_initial_revision.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migration/versions/f3572504bb09_initial_revision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/routers/edit_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/edit_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/routers/input_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/input_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/routers/input_violation.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/input_violation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/edit_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/edit_all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/get_input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/get_input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/input_violation.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/input_violation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.122" />
-        <option value="bundled-python-sdk-880ecab49056-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.122" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -230,6 +236,15 @@
       <workItem from="1745585919919" duration="17000" />
       <workItem from="1747038770295" duration="52000" />
       <workItem from="1747038849646" duration="38000" />
+      <workItem from="1747132803660" duration="6871000" />
+      <workItem from="1747203529825" duration="3944000" />
+      <workItem from="1747228298989" duration="69000" />
+      <workItem from="1747310485134" duration="2000" />
+      <workItem from="1747380352224" duration="833000" />
+      <workItem from="1747383568269" duration="47000" />
+      <workItem from="1747729352686" duration="76000" />
+      <workItem from="1749535592670" duration="642000" />
+      <workItem from="1749543589743" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -319,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745494484915</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Settings tags">
+      <option name="closed" value="true" />
+      <created>1747133082707</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747133082707</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +371,8 @@
     <MESSAGE value="folder admin_panel" />
     <MESSAGE value="File deletion with the user" />
     <MESSAGE value="The beginning of the addition of tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="The beginning of the addition of tags" />
+    <MESSAGE value="Settings tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,6 +393,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SingleWindows$SingleWindows.coverage" NAME="SingleWindows Coverage Results" MODIFIED="1738580922347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SingleWindows$SingleWindows.coverage" NAME="SingleWindows Coverage Results" MODIFIED="1747206817958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

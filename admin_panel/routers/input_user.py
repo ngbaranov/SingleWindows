@@ -34,6 +34,7 @@ async def post_input_user(request: Request,
                           dismissal: str | None = Form(),
                           type_violation: str | None = Form(),
                           date_violation: str | None = Form(),
+                          tags: str | None = Form(),
                           description: str | None = Form(),
                           uploaded_files: UploadFile = File(None),
                           ):
@@ -46,7 +47,7 @@ async def post_input_user(request: Request,
     user = await UsersDAO.add(db, surname=surname, name=name, last_name=last_name,
                               department_id=department_user.id,
                        hired=hired_date, dismissal=dismissal_date)
-    violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation,
+    violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation, tags=tags,
                         description=description, user_id=user.id)
 
     files = None

@@ -67,10 +67,12 @@ async def save_edit_user(
     for i, v_id in enumerate(violation_ids):
         type_field = f"type_violation_{i}"
         date_field = f"date_violation_{i}"
+        tags_field = f"tags_{i}"
         desc_field = f"description_{i}"
 
         type_violation_raw = form_data.get(type_field)
         date_violation_raw = form_data.get(date_field)
+        tags_violation = form_data.get(tags_field)
         description_raw = form_data.get(desc_field)
 
         # Преобразуем строку в Enum
@@ -92,6 +94,7 @@ async def save_edit_user(
             record_id=v_id,
             type_violation=type_violation,
             date_violation=date_violation,
+            tags=tags_violation,
             description=description_raw
         )
 
