@@ -2,6 +2,8 @@ from datetime import datetime, date
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from pgvector.sqlalchemy import Vector, VECTOR
+
 from app.database.db import Base
 from app.models.sql_enums import Departments, TypeViolation
 
@@ -28,6 +30,9 @@ class Violations(Base):
     tags: Mapped[str | None]
     description: Mapped[str | None]
     user_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
+
+    # вектор эмбеддинга (под E5-base, 768-мерный)
+    embedding: Mapped[list[float] | None] = mapped_column(Vector(768), nullable=True)
 
     user: Mapped['User'] = relationship("User", back_populates="violations")
 
