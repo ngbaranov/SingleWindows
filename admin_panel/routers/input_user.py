@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.dao.dao import UsersDAO, ViolationsDAO, DepartmentUsersDAO, UploadedFilesDAO
 from app.database.db_depends import get_db
 from app.models.sql_enums import Departments, TypeViolation
+from app.servise.violations_search import embed_one_violation
 
 from typing import Annotated
 
@@ -49,6 +50,8 @@ async def post_input_user(request: Request,
                        hired=hired_date, dismissal=dismissal_date)
     violation = await ViolationsDAO.add(db, type_violation=type_violation, date_violation=date_violation, tags=tags,
                         description=description, user_id=user.id)
+    # Создаем и сохраняем эмбеддинг для нарушения
+    await embed_one_violation(db, violation.id)
 
     files = None
     if not uploaded_files or not uploaded_files.filename:

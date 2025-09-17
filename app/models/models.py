@@ -2,7 +2,7 @@ from datetime import datetime, date
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from pgvector.sqlalchemy import Vector, VECTOR
+from pgvector.sqlalchemy import Vector
 
 from app.database.db import Base
 from app.models.sql_enums import Departments, TypeViolation
