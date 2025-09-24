@@ -1,5 +1,5 @@
 import os
-from datetime import datetime, date
+from datetime import datetime
 
 import aiofiles
 from fastapi import APIRouter, Request, Depends, Form, UploadFile, File
@@ -13,7 +13,6 @@ from app.servise.violations_search import embed_one_violation
 from typing import Annotated
 
 from auth.service.current_user import get_current_admin_user
-from admin_panel.service.header_admin_base import header_admin
 router = APIRouter(prefix="/input_user", tags=["input_user"])
 templates = Jinja2Templates(directory=["app/templates", "admin_panel/templates"])
 
@@ -85,4 +84,3 @@ async def post_input_user(request: Request,
                                                               "department": department, "violation": violation,
                                                               "type_violation": type_violation,
                                                                "files": files})
-

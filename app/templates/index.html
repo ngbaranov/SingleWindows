@@ -12,15 +12,6 @@
     <input type="text" id="search" class="form-control" placeholder="Введите фамилию...">
     <ul id="results" class="list-group mt-2" style="display: none;"></ul>
 
-<!--    <p class="h3 mt-5">Поиск по типу нарушений</p>-->
-<!--    <div class="row">-->
-<!--        {% for violation_key, violation_value in violations.items() %}-->
-<!--        <div class="col-md-6">-->
-<!--            <a href="/advanced_search/{{ violation_key }}">{{ violation_value }}</a>-->
-<!--        </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
     <p class="h3 mt-5">Поиск по тегам нарушений</p>
     <div class="row">
         {% for tag in tags %}
@@ -32,16 +23,18 @@
 
     <ul id="tag-users" class="list-group mt-2"></ul>
 
-
     <p class="h3 mt-5">Поиск по ключевым словам</p>
     <div class="row mt-3">
-        <form method="get" class="d-flex ms-auto" action="/keyword_search">
-            <input class="form-control me-2" type="search" name="keyword" placeholder="Введите  ключевые слова"
-                   aria-label="Поиск">
+        <form method="get" class="d-flex" action="/keyword_search">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Введите ключевые слова" aria-label="Поиск">
+            <select class="form-select me-2" name="search_type" style="max-width: 200px;">
+                <option value="keyword">Обычный поиск</option>
+                <option value="semantic">Семантический поиск</option>
+            </select>
+            <input class="form-control me-2" type="number" name="k" placeholder="Лимит" value="10" min="1" max="50" style="max-width: 100px;">
             <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
     </div>
-
 </div>
 
 <script>
@@ -112,8 +105,6 @@
         });
     });
 </script>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

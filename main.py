@@ -1,22 +1,11 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from contextlib import asynccontextmanager
 
 from app.routers import (index, get_user_id, get_search, advanced_search, keyword_search)
 from admin_panel.routers import input_user, admin_panel, delete_user, add_document, input_violation, edit_all
 from auth import auth_routher
 
-from app.servise.violations_search import bulk_embed_missing_violations
-from app.database.db import async_session_maker
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Один раз прогоняем embeddings для всего, где embedding IS NULL
-    async with async_session_maker() as db:
-        processed = await bulk_embed_missing_violations(db)
-        print(f"[startup] embedded {processed} violations")
-    yield
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
@@ -32,8 +21,3 @@ app.include_router(delete_user.router)
 app.include_router(auth_routher.router)
 app.include_router(admin_panel.router)
 app.include_router(edit_all.router)
-
-
-
-
-

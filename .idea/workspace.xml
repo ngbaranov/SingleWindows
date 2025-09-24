@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="finish">
-      <change afterPath="$PROJECT_DIR$/app/servise/embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/servise/violations_search.py" afterDir="false" />
+    <list default="true" id="105e1d60-f6a8-4b23-9f77-c64ff66cd4e5" name="Changes" comment="Smart search">
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_panel/routers/input_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/routers/input_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/get_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/get_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/keyword_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/keyword_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/get_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/get_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/servise/violations_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/servise/violations_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +114,45 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="violations_search" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SingleWindows" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/servise" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/servise/violations_search.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SingleWindows" type="Python.FastAPI">
+      <option name="file" value="$PROJECT_DIR$/main.py" />
+      <module name="SingleWindows" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.12 (SingleWindows)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="SingleWindows" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
       <module name="SingleWindows" />
@@ -143,8 +182,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.130" />
-        <option value="bundled-python-sdk-1bde30d8e611-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.130" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-PY-252.26199.168" />
+        <option value="bundled-python-sdk-b3d66beaba9a-c6efb3732140-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26199.168" />
       </set>
     </attachedChunks>
   </component>
@@ -314,6 +353,17 @@
       <workItem from="1757656091311" duration="10000" />
       <workItem from="1757656129441" duration="13000" />
       <workItem from="1757930916852" duration="1382000" />
+      <workItem from="1758109856702" duration="69000" />
+      <workItem from="1758196713801" duration="236000" />
+      <workItem from="1758196975702" duration="562000" />
+      <workItem from="1758197547250" duration="1442000" />
+      <workItem from="1758199653145" duration="4267000" />
+      <workItem from="1758517639408" duration="2000" />
+      <workItem from="1758627220542" duration="652000" />
+      <workItem from="1758705264674" duration="682000" />
+      <workItem from="1758718999779" duration="2000" />
+      <workItem from="1758719041979" duration="410000" />
+      <workItem from="1758719476722" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="Preparing for database adjustments">
       <option name="closed" value="true" />
@@ -419,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755607820676</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Smart search">
+      <option name="closed" value="true" />
+      <created>1758109916747</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758109916747</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +508,8 @@
     <MESSAGE value="The beginning of the addition of tags" />
     <MESSAGE value="Settings tags" />
     <MESSAGE value="finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish" />
+    <MESSAGE value="Smart search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Smart search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -467,7 +526,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SingleWindows$SingleWindows.coverage" NAME="SingleWindows Coverage Results" MODIFIED="1756904953143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SingleWindows$SingleWindows.coverage" NAME="SingleWindows Coverage Results" MODIFIED="1758720098498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SingleWindows$violations_search.coverage" NAME="violations_search Coverage Results" MODIFIED="1756889394782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/servise" />
   </component>
 </project>
